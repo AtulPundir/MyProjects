@@ -1,0 +1,17 @@
+Key Points:
+
+Runnable Interface:
+Contains a single abstract method: void run().
+Does not return a result or throw checked exceptions.
+
+Thread Class:
+The start() method creates a new thread and invokes the run() method.
+
+Decoupling Logic and Thread:
+Using Runnable separates the task's logic from the thread management.
+
+
+Advantages of Runnable:
+Allows your class to extend another class, as it doesn't require extending Thread.
+Useful for defining tasks that can be executed by multiple threads.
+This approach is simple, reusable, and aligns with Java’s object-oriented design principles.
