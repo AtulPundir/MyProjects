@@ -1,4 +1,4 @@
-package com.ap.pre.walmart.imp;
+package com.ap.pre.datastructures.walmart.imp;
 
 import java.util.LinkedList;
 import java.util.Queue;

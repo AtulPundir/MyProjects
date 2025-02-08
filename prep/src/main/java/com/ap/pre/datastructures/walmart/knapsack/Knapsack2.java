@@ -1,4 +1,4 @@
-package com.ap.pre.walmart.knapsack;
+package com.ap.pre.datastructures.walmart.knapsack;
 
 //USING class. provides encapsulation
 public class Knapsack2 {

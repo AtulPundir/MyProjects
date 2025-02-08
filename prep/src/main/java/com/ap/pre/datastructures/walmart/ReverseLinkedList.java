@@ -1,4 +1,4 @@
-package com.ap.pre.walmart;
+package com.ap.pre.datastructures.walmart;
 
 import java.util.LinkedList;
 

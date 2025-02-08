@@ -1,4 +1,4 @@
-package com.ap.pre.walmart.imp;
+package com.ap.pre.datastructures.walmart.imp;
 
 public class SolutionWRRX {
     public static int minReplacementsToBalance(String[] board) {

@@ -1,4 +1,4 @@
-package com.ap.pre.walmart.knapsack;
+package com.ap.pre.datastructures.walmart.knapsack;
 
 public class Knapsack {
     public static int knapsack(int[] weights, int[] values, int W) {
