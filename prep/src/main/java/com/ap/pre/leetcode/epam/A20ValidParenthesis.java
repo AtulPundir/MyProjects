@@ -2,7 +2,7 @@ package com.ap.pre.leetcode.epam;
 
 import java.util.Stack;
 
-public class ValidParenthesis20 {
+public class A20ValidParenthesis {
 
     public static void main(String[] args) {
         System.out.println(isValid("()[]({[{}][{}]})"));
