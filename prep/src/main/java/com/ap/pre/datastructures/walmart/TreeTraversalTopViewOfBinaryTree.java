@@ -65,15 +65,17 @@ public class TreeTraversalTopViewOfBinaryTree {
         List<Integer> result = new ArrayList<>();
         System.out.println();
 
+        //EASIER WAY
         traverse(root,result);
+         System.out.println();
         System.out.println(result);
     }
 
 
-
     public static List<Integer> traverse(TreeNode root, List<Integer> result) {
         Set<Integer> uniqueNodes = new LinkedHashSet<>();
-        if (root != null) {
+        if (root == null) return result;
+       
             if (root.left != null) {
                 getLeft(root.left,uniqueNodes);
             }
@@ -81,7 +83,7 @@ public class TreeTraversalTopViewOfBinaryTree {
             if (root.right != null) {
                 getRight(root.right,uniqueNodes);
             }
-        }
+        
         result.addAll(uniqueNodes);
         return result;
     }
