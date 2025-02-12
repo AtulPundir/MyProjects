@@ -39,4 +39,20 @@ public class GroupAnagrams {
         //System.out.println(groupAnagrams(strs));
         System.out.println(groupAnagrams2(strs));
     }
+
+    
+}
+
+class Resource implements AutoCloseable {
+    public void use() { System.out.println("Using resource..."); }
+    
+    @Override
+    public void close() {
+        System.out.println("Resource closed!");
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
+        return new ResponseEntity<>("Error: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }

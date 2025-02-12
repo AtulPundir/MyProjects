@@ -61,10 +61,24 @@ public class TreeTraversalPostOrder {
         root.left.right = new TreeNode(5);
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
+        
+        List<Integer> result = postorderTraversalWithoutHelper(root);
+        System.out.println("Postorder Traversal:");
+        System.out.println(result);
+
+        root.left.left.left = new TreeNode(8);
+        root.left.left.right = new TreeNode(9);
+        root.left.right.left = new TreeNode(10);
+        root.left.right.right = new TreeNode(11);
+        
+        root.right.left.left = new TreeNode(12);
+        root.right.left.right = new TreeNode(13);
+        root.right.right.left = new TreeNode(14);
+        root.right.right.right = new TreeNode(15);
 
         // Perform postorder traversal
         //List<Integer> result = postorderTraversal(root);
-        List<Integer> result = postorderTraversalWithoutHelper(root);
+        result = postorderTraversalWithoutHelper(root);
         System.out.println("Postorder Traversal:");
         System.out.println(result);
     }
@@ -73,12 +87,14 @@ public class TreeTraversalPostOrder {
 
 /*
  
-    1
-   / \
-  2   3
- / \ / \
-4  5 6  7
-
+                1
+             /     \ 
+           /         \
+          2            3
+         /  \        /   \
+        4    5       6    7
+       / \  / \     / \   / \
+       8 9  10 11  12 13  14 15
 
 O/P
 
