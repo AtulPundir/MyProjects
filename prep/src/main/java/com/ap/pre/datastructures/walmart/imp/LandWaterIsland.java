@@ -46,16 +46,6 @@ public class LandWaterIsland {
         return islandCount;
     }
 
-
-    public static int numIslands2(char[][] grid) {
-
-        if (grid == null || grid[0].length < 1 || grid[1].length < 1){
-
-        }
-       int islandCount =0;
-
-        return islandCount;
-    }
     public static void main(String[] args) {
        // LandWaterIsland solution = new LandWaterIsland();
 

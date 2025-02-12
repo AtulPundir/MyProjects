@@ -51,8 +51,4 @@ class Resource implements AutoCloseable {
         System.out.println("Resource closed!");
     }
 
-    @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<String> handleRuntimeException(RuntimeException ex) {
-        return new ResponseEntity<>("Error: " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
 }
