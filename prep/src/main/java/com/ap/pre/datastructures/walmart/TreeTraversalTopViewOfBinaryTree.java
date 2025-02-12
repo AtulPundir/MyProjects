@@ -47,7 +47,6 @@ public class TreeTraversalTopViewOfBinaryTree {
     }
 
     public static void main(String[] args) {
-        // Construct the binary tree
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
         root.right = new TreeNode(3);
@@ -61,7 +60,48 @@ public class TreeTraversalTopViewOfBinaryTree {
         // Print the top view
         System.out.println("Top view of the binary tree:");
         printTopView(root);
+
+
+        List<Integer> result = new ArrayList<>();
+        System.out.println();
+
+        traverse(root,result);
+        System.out.println(result);
     }
+
+
+
+    public static List<Integer> traverse(TreeNode root, List<Integer> result) {
+        Set<Integer> uniqueNodes = new LinkedHashSet<>();
+        if (root != null) {
+            if (root.left != null) {
+                getLeft(root.left,uniqueNodes);
+            }
+            uniqueNodes.add(root.data);
+            if (root.right != null) {
+                getRight(root.right,uniqueNodes);
+            }
+        }
+        result.addAll(uniqueNodes);
+        return result;
+    }
+
+    private static  void getLeft(TreeNode left, Set<Integer> result) {
+        if (left == null) return;
+        getLeft(left.left, result);
+        result.add(left.data); 
+       
+    }
+
+    private static  void getRight(TreeNode right, Set<Integer> result) {
+        while (right != null){
+           result.add(right.data);
+           right = right.right;
+        }
+       
+    }
+
+    
 }
 
 
