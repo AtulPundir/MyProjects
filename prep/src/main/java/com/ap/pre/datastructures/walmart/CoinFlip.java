@@ -17,6 +17,27 @@ public class CoinFlip {
         return flips;
     }
 
+    public static int minFlips2(char[] coins) {
+        int flips = 0;
+
+        for (int j = 0; j < coins.length ; j++){
+            if (coins[j] == 'H'){
+            flips++;
+
+            for (int i =j; i < coins.length; i++){
+                
+                if (coins[i] == 'H'){
+                    coins[i] = 'T';
+                } else if (coins[i] == 'T'){
+                    coins[i] = 'H';
+                    
+                }
+            } 
+        }
+        }
+        return flips;
+    }
+
     public static void main(String[] args) {
         // Example: All coins are initially heads
         char[] coins = {'H', 'H', 'H', 'H', 'T', 'H'};// Output: 3
