@@ -37,11 +37,11 @@ public class StreamExample {
             } else if (nums[i]> secondL && nums[i] != largest) {
                 secondL = nums[i];
 
-            }
-            if (largest == secondL){
-                throw new RuntimeException("Same numbers");
-            }
+            } 
 
+        }
+        if (largest == secondL){
+            throw new RuntimeException("Same numbers");
         }
         return secondL;
 
