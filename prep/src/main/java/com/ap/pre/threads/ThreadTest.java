@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 
 //Find Out the Correct Output for the below code snippet, and check whether candidate is aware of different types of locking in java.
 
-
+//WISSEN
 class MultiThreadHandle {
     public synchronized void test1() {
         System.out.println("Inside Test1 Method");
