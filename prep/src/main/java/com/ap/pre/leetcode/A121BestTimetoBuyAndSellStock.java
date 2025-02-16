@@ -2,7 +2,7 @@ package com.ap.pre.leetcode;
 
 //EASY
 //Only one time buy and one time selling is allowed
-public class BestTimetoBuyAndSellStock121 {
+public class A121BestTimetoBuyAndSellStock {
     public static int maxProfit(int[] prices) {
         int maxProfit = 0;
 
