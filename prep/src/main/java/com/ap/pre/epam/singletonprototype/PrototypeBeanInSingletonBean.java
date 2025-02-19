@@ -24,6 +24,7 @@ class SingletonBean{
     //import jakarta.inject.Provider;       //Add this import
     //Provider<PrototypeBean> prototypeBeanP;
 
+
     @Autowired
     PrototypeBean prototypeBeanByLookUp = getPrototypeBean(); ;  
 

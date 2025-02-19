@@ -2,7 +2,7 @@ package com.ap.pre.datastructures.walmart.imp;
 
 import java.util.Stack;
 
-public class LandWaterIslandWIthStack {
+public class A200NumberOfIslandsWIthStack {
     // Function to perform DFS using an explicit stack
     private static void dfsIterative(char[][] grid, int i, int j) {
         Stack<int[]> stack = new Stack<>();

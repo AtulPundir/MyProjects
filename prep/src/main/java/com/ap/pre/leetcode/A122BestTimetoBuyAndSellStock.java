@@ -2,7 +2,7 @@ package com.ap.pre.leetcode;
 
 //MEDIUM
 //Multiple time selling and buying allowed.
-public class BestTimetoBuyAndSellStock122 {
+public class A122BestTimetoBuyAndSellStock {
     public static  int maxProfit(int[] prices) {
         int maxProfit = 0;
     
@@ -13,30 +13,41 @@ public class BestTimetoBuyAndSellStock122 {
         }
     
         return maxProfit;
-        }
-
-        public static int maxProfit2(int[] prices) {
-            int maxProfit = 0;
-            int prevPrice = Integer.MAX_VALUE;
-            for (int price : prices) {
-                if (price < prevPrice) {
-                    prevPrice = price;
-                } else {
-                   maxProfit += price - prevPrice ;   
-                   prevPrice = price;
-                }
+    }
+    public static  int maxProfit3(int[] prices) {
+        int maxProfit = 0;
+    
+        for (int i = 0; i < prices.length - 1; i++) {
+            if (prices[i] < prices[i + 1]) {
+                maxProfit += prices[i+1] - prices[i];
             }
+        }
+        return maxProfit;
+    }
         
-            return maxProfit;
+
+    public static int maxProfit2(int[] prices) {
+        int maxProfit = 0;
+        int prevPrice = Integer.MAX_VALUE;
+        for (int price : prices) {
+            if (price < prevPrice) {
+                prevPrice = price;
+            } else {
+               maxProfit += price - prevPrice ;   
+               prevPrice = price;
+            }
         }
+    
+        return maxProfit;
+    }
 
-        public static void main(String[] args) {
-            //int [] prices = {7,1,5,3,6,4};
-            int [] prices = {1,2,3,4,5};
-
-
-            System.out.println(maxProfit2(prices));
-        }
+    public static void main(String[] args) {
+        //int [] prices = {7,1,5,3,6,4};
+        int [] prices = {1,2,3,4,5};
+        System.out.println(maxProfit(prices));
+        System.out.println(maxProfit2(prices));
+        System.out.println(maxProfit3(prices));
+    }
 
 }
 
