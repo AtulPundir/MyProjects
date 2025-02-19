@@ -1,6 +1,6 @@
 package com.ap.pre.datastructures.walmart.imp;
 
-public class LandWaterIsland {
+public class A200NumberOfIslands {
 
     // Function to perform DFS and mark all connected lands as visited
     private static void dfs(char[][] grid, int i, int j) {
@@ -62,53 +62,35 @@ public class LandWaterIsland {
         System.out.println("Number of Islands: " + result); // Output the result
     }
 
-
-    static int coundLand(int[][]nums){
-        int count = 0;
-
-        if (nums == null ||nums.length < 1 || nums[0].length< 1){
-            return count;
-        }
-
-        for (int i = 0; i < nums.length; i++){
-            for(int j = 0; j < nums[0].length; j++){
-
-                if (nums[i][j] == 1){
-                    count++;
-                    dfs2(nums, i, j);
-
-                }
-            }
-        }
-
-        return count;
-
-    }
-
-    static void dfs2(int [][] nums,int i,int j){
-
-        if ( i < 0 || j < 0 || i> nums.length || j > nums[0].length || nums[i][j]==0){
-            return;
-        }
-
-        nums[i][j] =0;
-
-        dfs2(nums, i - 1, j);
-        dfs2(nums, i + 1, j);
-        dfs2(nums, i, j - 1);
-        dfs2(nums, i, j + 1);
-
-    }
-
     
 }
 
 
 /*
  * 
-Given  m x n () binary grid where map of 1s represent land & 0s water. 
-Return the number of islands.
-An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically .
-you may assume all four edges of the grid are all surrounded by water
+Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
+
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+
+ 
+
+Example 1:
+
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+Output: 1
+Example 2:
+
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+Output: 3
  * 
  */

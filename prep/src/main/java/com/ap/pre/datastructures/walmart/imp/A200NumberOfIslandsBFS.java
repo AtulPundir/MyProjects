@@ -3,7 +3,7 @@ package com.ap.pre.datastructures.walmart.imp;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class LandWaterIslandBFS {
+public class A200NumberOfIslandsBFS {
 
     private static void bfs(char[][] grid, int i, int j) {
         Queue<int[]> queue = new LinkedList<>();

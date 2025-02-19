@@ -51,32 +51,32 @@ public class A54SpiralMatrix {
 
         if (grid == null || grid.length == 0) return result;
 
-        int top= 0, left  = 0;
-        int bottom = grid.length -1 , right = grid[0].length -1 ;
+        int topRow= 0, leftColumn  = 0;
+        int bottomRow = grid.length -1 , rightColumn = grid[0].length -1 ;
 
-       while (top <= bottom && left <=right){
+       while (topRow <= bottomRow && leftColumn <=rightColumn){
 
-            for (int i = left; i <= right; i ++){
-                result.add(grid[top][i]);
+            for (int i = leftColumn; i <= rightColumn; i ++){
+                result.add(grid[topRow][i]);
             }
-            top++;
+            topRow++;
 
-            for (int i = top ; i <= bottom; i++){
-                result.add(grid[i][right]);
+            for (int i = topRow ; i <= bottomRow; i++){
+                result.add(grid[i][rightColumn]);
             }
-            right--;
+            rightColumn--;
 
-            if (top <= bottom) {
-                for (int i =right; i >= left; i--){
-                    result.add(grid[bottom][i]);
+            if (topRow <= bottomRow) {
+                for (int i =rightColumn; i >= leftColumn; i--){
+                    result.add(grid[bottomRow][i]);
                 }
-                bottom--;
+                bottomRow--;
             }   
-            if (left <= right) {
-                for (int i = bottom; i >= top; i--) {
-                    result.add(grid[i][left]);
+            if (leftColumn <= rightColumn) {
+                for (int i = bottomRow; i >= topRow; i--) {
+                    result.add(grid[i][leftColumn]);
                 }
-                left++;
+                leftColumn++;
             }
 
         }
