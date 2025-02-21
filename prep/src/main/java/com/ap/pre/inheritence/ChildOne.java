@@ -20,6 +20,16 @@ public class ChildOne extends ParentClass {
 		p.methodHiding();
 		p2.methodHiding();
 		c.methodHiding();
+		c.privateMethod();
+
+		System.out.println("===== CALL ONE ENDED ======");
+
+		String s1 = "Java1";
+		String s2 = "Java1";
+		System.out.println(s1 == s2);
+		System.out.println(s1.equals(s2));
+		String s3 = new String("Java1");
+		System.out.println(s1 == s3 );
 
 	}
 	
@@ -33,6 +43,13 @@ public class ChildOne extends ParentClass {
 	
 	public static void methodHiding() {
 		System.out.println("Static method in Child");
+	}
+
+	public static void staticMethod(){
+		System.out.println("Static Method of Child");
+	}
+	private static void privateMethod(){
+		System.out.println("Private Method of Child");
 	}
 
 }
