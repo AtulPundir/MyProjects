@@ -1,4 +1,4 @@
-package com.ap.test;
+package com.ap.pre.datastructures;
 
 import java.util.ArrayList;
 import java.util.Arrays;

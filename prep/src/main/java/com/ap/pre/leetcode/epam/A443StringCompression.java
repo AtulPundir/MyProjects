@@ -14,7 +14,7 @@ public class A443StringCompression {
 
         System.out.println(compress(chars2));
 
-        System.out.println(compress(chars3));
+        System.out.println(compress2(chars3));
         
     }
 

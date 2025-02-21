@@ -5,27 +5,28 @@ public class A88MergeSortedArray {
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
         int nums1ValidElementIndex = m - 1;  // Last index of nums1's actual elements
         int nums2LastIndex = n - 1;  // Last index of nums2
-        int i = m + n - 1;  // Last index of nums1 (including extra space)
+        int lastIndex = nums1.length -1;// Last index of nums1 (including extra space)
+        //int i = m + n - 1;  // Last index of nums1 (including extra space)
 
         // Merge from the back to avoid shifting elements
         while (nums1ValidElementIndex >= 0 && nums2LastIndex >= 0) {
             if (nums1[nums1ValidElementIndex] > nums2[nums2LastIndex]) {
-                nums1[i] = nums1[nums1ValidElementIndex];  // Place the larger value at the end
-                i--;
+                nums1[lastIndex] = nums1[nums1ValidElementIndex];  // Place the larger value at the end
+                lastIndex--;
                 nums1ValidElementIndex--;
 
                 //nums1[i--] = nums1[nums1ValidElementIndex--];
             } else {
-                nums1[i] = nums2[nums2LastIndex];
-                i--;
+                nums1[lastIndex] = nums2[nums2LastIndex];
+                lastIndex--;
                 nums2LastIndex--;
 
                 //nums1[i--] = nums2[nums2LastIndex--];    
            }
         }
         while (nums2LastIndex >= 0) {
-            nums1[i] = nums2[nums2LastIndex];
-            i--;
+            nums1[lastIndex] = nums2[nums2LastIndex];
+            lastIndex--;
             nums2LastIndex--;
         }
     }
