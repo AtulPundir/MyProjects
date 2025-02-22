@@ -4,12 +4,12 @@ package com.ap.pre.leetcode;
 import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
+//MEDIUM
 public class A347TopKFrequentElements {
 
     public static int[] topKFrequent(int[] nums, int k) {
@@ -132,6 +132,7 @@ public class A347TopKFrequentElements {
         return result;
     }
     
+    //MAIN
     public static int[] topKFrequent5(int[] nums, int k) {
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
@@ -194,7 +195,6 @@ public class A347TopKFrequentElements {
                 freqList.add((i + min),x);
             }
         }
-        
         
         List<Integer> tempList = new ArrayList<>(freqList); 
         for (int i = 0; i < k; i++) {
