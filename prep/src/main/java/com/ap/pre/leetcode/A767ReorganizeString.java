@@ -6,18 +6,17 @@ import java.util.PriorityQueue;
 
 public class A767ReorganizeString {
 
+    //5ms
     public static String reorganizeString(String s) {
         Map<Character, Integer> map = new HashMap<>();
         for (char c : s.toCharArray()) {
             map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-        // Step 2: Max Heap based on character frequency
         PriorityQueue<Map.Entry<Character, Integer>> maxHeap =
                 new PriorityQueue<>((a, b) -> b.getValue() - a.getValue());
         maxHeap.addAll(map.entrySet());
 
-        // Step 3: Build the rearranged string
         StringBuilder result = new StringBuilder();
         Map.Entry<Character, Integer> prev = null;
 
@@ -25,7 +24,6 @@ public class A767ReorganizeString {
             Map.Entry<Character, Integer> curr = maxHeap.poll();
             result.append(curr.getKey());
 
-            // Reduce frequency and store the previous character
             if (prev != null && prev.getValue() > 0) {
                 maxHeap.offer(prev);
             }
@@ -33,28 +31,27 @@ public class A767ReorganizeString {
             curr.setValue(curr.getValue() - 1);
             prev = curr;
         }
-
-        // Step 4: Check if we formed a valid string
         return result.length() == s.length() ? result.toString() : "";
     }
 
+    //0ms
     public static String reorganizeString2(String s) {
-        // Step 1: Count frequency of each character
-        int[] freq = new int[26];
+        int[] charFreq = new int[26];
         for (char c : s.toCharArray()) {
-            freq[c - 'a']++;
+            charFreq[c - 'a']++;
         }
 
         // Step 2: Find the most frequent character
-        int maxFreq = 0, maxCharIndex = 0, n = s.length();
+        int maxFreq = 0, maxFreqCharIndex = 0, n = s.length();
         for (int i = 0; i < 26; i++) {
-            if (freq[i] > maxFreq) {
-                maxFreq = freq[i];
-                maxCharIndex = i;
+            if (charFreq[i] > maxFreq) {
+                maxFreq = charFreq[i];
+                maxFreqCharIndex = i;
             }
         }
 
         // Step 3: Check if rearrangement is possible
+        //If maxFreq is more than half of given string length, then is will not be possible
         if (maxFreq > (n + 1) / 2) {
             return ""; // Not possible to rearrange
         }
@@ -64,18 +61,18 @@ public class A767ReorganizeString {
         int index = 0;
 
         // Fill the most frequent character first at even indices
-        while (freq[maxCharIndex] > 0) {
-            result[index] = (char) ('a' + maxCharIndex);
-            freq[maxCharIndex]--;
+        while (charFreq[maxFreqCharIndex] > 0) {
+            result[index] = (char) ('a' + maxFreqCharIndex);
+            charFreq[maxFreqCharIndex]--;
             index += 2;
         }
 
         // Step 5: Fill remaining characters in the result array
         for (int i = 0; i < 26; i++) {
-            while (freq[i] > 0) {
+            while (charFreq[i] > 0) {
                 if (index >= n) index = 1; // Start filling odd indices
                 result[index] = (char) ('a' + i);
-                freq[i]--;
+                charFreq[i]--;
                 index += 2;
             }
         }
@@ -84,7 +81,7 @@ public class A767ReorganizeString {
     }
 
     public static void main(String[] args) {
-        System.out.println(reorganizeString("aab"));
+        System.out.println(reorganizeString2("aab"));
         System.out.println(reorganizeString("aaab"));
         System.out.println(reorganizeString("baaba"));
     }
