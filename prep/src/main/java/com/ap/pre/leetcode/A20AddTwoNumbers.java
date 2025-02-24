@@ -3,7 +3,7 @@ package com.ap.pre.leetcode;
 //EASY
 public class A20AddTwoNumbers {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        // Dummy head to ease list construction.
+
         ListNode head = new ListNode(0);
         ListNode current = head;
         int carry = 0;
@@ -25,7 +25,6 @@ public class A20AddTwoNumbers {
             current.next = new ListNode(sum % 10);
             current = current.next;
         }
-        // Return the next node of dummyHead, which is the head of the result list.
         return head.next;
     }
     
